@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mortgage Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" differ ></script>
+    
+</head>
+<body>
+   <main >
+    <div class="mortgage-form">
+        
+        <div class="mortgage-name">
+            <header>Mortgage Calculator</header>
+
+            <p
+            onclick="
+            document.querySelectorAll
+            ('input[type=number]').forEach
+            (input => input.value = '');"
+            >ClearAll</p>
+        </div>
+
+        <div class="amount">
+            <label for="Number">Mortgage Amount</label>
+            <div class="form-input">
+                <span>&euro;</span><input type="number" value="" 
+                placeholder="enter loan amount here"  class="loanAmount"
+                 id="loan-amount"
+                onclick="
+                if(this.value == '0') {
+                    this.value = '';
+                }">
+            </div>
+        </div>
+        
+        <div class="term-container">
+
+            <div class="term">
+                <label for="Number">Mortgage Term</label>
+                <div class="formInput2">
+                    <input type="number" value="" min="0" 
+                    class="monthlyInput" id="monthly-payment"
+                    onclick="
+                    if(this.value == '' || isNaN(this.value)) {
+                        this.value = '';
+                    }"
+                    ><span>years</span>
+                </div>
+            </div>
+            
+            
+            <div class="Interest Rate">
+                <label for="Number">Interest Rate</label>
+                <div class="formInput3">
+                    <input type="number" value="" min="0"
+                     class="interestInput" id="interest-rate"
+                    onclick="
+                    if(this.value == '0') {
+                        this.value = '';
+                    }"
+                    
+                    ><span>%</span>
+                </div>
+            </div>
+        </div>
+
+        <section class="type-container">
+            <label for="button">Mortgage Type</label>
+            <div class="radio-section">
+                
+                <div class="radio-container1">
+                    <input type="radio" name="pick" class="custom-radio" 
+                    id="repaymentBtn"
+                    onclick="this.checked=true" checked
+                    >Repayment</input>
+                </div>
+
+                <div class="radio-container1">
+                    <input type="radio" name="pick" class="custom-radio"
+                    id="interestBtn"
+                    onclick="this.checked=true" checked
+                    >Interest Only</input>
+                </div>
+                
+            </div>
+        </section>
+
+
+        <button class="calculateBtn"  > 
+            
+            <img src="./images/icon-calculator.svg" alt="">
+            
+            <p>Calculate Repayment</p>
+        </button>
+
+    </div>
+
+    <div class="results">
+        <h2>
+            Your results
+        </h2>
+
+
+        <section >
+            <p class="note">your results are shown based on the information
+                you provided. To adjust the results, edit the form and
+                click "calculate repayments" again.
+            </p>
+            
+        </section>
+
+        <section class="repayment-container">
+            <div class="monthly">
+                Your monthly repayments
+            </div>
+
+           
+
+
+
+            <input type="text" name="pay-container" class="monthlyPay" id="monthlyPay" readonly>
+
+            
+            <h3>Total you'll repay over the term</h3>
+            <input type="text" name="repay-container" class="totalPay" id="totalPay" readonly>
+        
+        </section>
+    </div>
+
+  
+   </main> 
+</body>
+</html>
